@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1udxkh1x2qx6"]
+
+[ext_resource type="Script" path="res://Receiver.gd" id="1_5eak1"]
+
+[node name="Receiver" type="Node2D"]
+script = ExtResource("1_5eak1")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 943.0
+offset_top = 9.0
+offset_right = 951.0
+offset_bottom = 17.0
+text = "from receiver"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 775.0
+offset_top = 73.0
+offset_right = 906.0
+offset_bottom = 96.0
+text = "signal from main
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 917.0
+offset_top = 71.0
+offset_right = 1118.0
+offset_bottom = 94.0
+text = "-"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
